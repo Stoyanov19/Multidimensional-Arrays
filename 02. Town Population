@@ -1,0 +1,13 @@
+function solve(input) {
+    const cities = {};
+    for (const line of input) {
+        let [name, population] = line.split(' <-> ');
+        if (!cities[name]) {
+            cities[name] = 0;
+        }
+        cities[name] += Number(population);
+    }
+    for (const [key, value] of Object.entries(cities)) {
+        console.log(`${key} : ${value}`);
+    }
+}
